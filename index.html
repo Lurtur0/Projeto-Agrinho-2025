@@ -1,258 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agricultura Brasil - Notícias e Preços</title>
-    <!-- Link para o Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Doenças de Plantas e Agroindústria</title>
+
+    <!-- Importando Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        /* Fundo em tons de verde */
         body {
-            background-color: #e6f7e6;
+            background-color: #f8f9fa;
             font-family: Arial, sans-serif;
         }
 
-        /* Cabeçalho com imagem */
-        .header-image {
-            background-image: url('https://via.placeholder.com/1920x400.png?text=Imagem+Agrícola');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-        }
-
-        /* Barra lateral de notícias */
-        .sidebar {
-            background-color: #cce6cc;
+        .content {
+            background-color: white;
             padding: 20px;
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        .card {
+            margin-bottom: 20px;
         }
 
         .footer {
-            background-color: #4CAF50;
+            background-color: #333;
             color: white;
-            padding: 15px;
+            padding: 10px;
             text-align: center;
-            margin-top: 30px;
         }
 
         .section-title {
             color: #4CAF50;
+            font-weight: bold;
         }
-
-        .section-prices {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .news-item {
-            margin-bottom: 20px;
-        }
-
-        .price-table {
-            margin-bottom: 30px;
-        }
-
-        h2, h3 {
-            color: #4CAF50;
-        }
-
-        .img-carousel{
-            height: 700px;
-            width: auto;
-        }
-
     </style>
 </head>
 <body>
-    <!-- Barra de navegação -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Agricultura Brasil</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Notícias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Preços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Cabeçalho com imagem -->
-    <div class="container text-center">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="https://img.cdndsgni.com/preview/10530263.jpg" class="d-block w-100 img-carousel" alt="...">
-                </div>
-                <div class="carousel-item">
-                <img src="https://s2-umsoplaneta.glbimg.com/yRBsZGYwBfoBb27UKcP7biii1iQ=/0x0:1350x1080/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_7d5b9b5029304d27b7ef8a7f28b4d70f/internal_photos/bs/2022/3/B/eb2c2nRnCKAWUG19kSIA/0ejvpak.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                <img src="https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.2979384:1597891659/granja-galinhas-aves.jpeg?f=default&$p$f=f3e3e23" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            </div>
-    </div>
-
-    <!-- Conteúdo Principal -->
-    <div class="container mt-4">
+    <div class="container-fluid">
         <div class="row">
-            <!-- Seções de Preços -->
-            <div class="col-md-8">
-                <h2 class="section-title">Preços dos Itens Rurais</h2>
 
-                <!-- Seção de Grãos -->
-                <div class="section-prices">
-                    <h3>Preços de Grãos</h3>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Produto</th>
-                                <th scope="col">Preço</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Milho</td>
-                                <td>R$ 55,00/Sc</td>
-                            </tr>
-                            <tr>
-                                <td>Soja</td>
-                                <td>R$ 130,00/Sc</td>
-                            </tr>
-                            <tr>
-                                <td>Trigo</td>
-                                <td>R$ 70,00/Sc</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <!-- Conteúdo principal -->
+            <div class="col-md-12">
+                <div class="content">
 
-                <!-- Seção de Carne de Boi -->
-                <div class="section-prices">
-                    <h3>Preços de Carne de Boi</h3>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Corte</th>
-                                <th scope="col">Preço</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Picanha</td>
-                                <td>R$ 70,00/kg</td>
-                            </tr>
-                            <tr>
-                                <td>Alcatra</td>
-                                <td>R$ 55,00/kg</td>
-                            </tr>
-                            <tr>
-                                <td>Fraldinha</td>
-                                <td>R$ 45,00/kg</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    <h1>Doenças de Plantas</h1>
+                    <p>Abaixo estão algumas das doenças mais comuns que afetam as plantas e as estações do ano em que elas ocorrem:</p>
 
-                <!-- Seção de Carne de Porco -->
-                <div class="section-prices">
-                    <h3>Preços de Carne de Porco</h3>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Corte</th>
-                                <th scope="col">Preço</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Lombo</td>
-                                <td>R$ 30,00/kg</td>
-                            </tr>
-                            <tr>
-                                <td>Pernil</td>
-                                <td>R$ 25,00/kg</td>
-                            </tr>
-                            <tr>
-                                <td>Costelinha</td>
-                                <td>R$ 28,00/kg</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="section-title">Míldio</h2>
+                            <p><strong>Descrição:</strong> O míldio é uma doença causada por fungos que afeta diversas culturas, como uva, tomate e pepino. Ela se caracteriza por manchas amareladas nas folhas e um pó branco nas partes afetadas da planta.</p>
+                            <p><strong>Estação:</strong> Primavera e Outono</p>
+                        </div>
+                    </div>
 
-                <!-- Seção de Carne de Galinha -->
-                <div class="section-prices">
-                    <h3>Preços de Carne de Galinha</h3>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Corte</th>
-                                <th scope="col">Preço</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Coxa e Sobrecoxa</td>
-                                <td>R$ 14,00/kg</td>
-                            </tr>
-                            <tr>
-                                <td>Peito</td>
-                                <td>R$ 18,00/kg</td>
-                            </tr>
-                            <tr>
-                                <td>Asa</td>
-                                <td>R$ 12,00/kg</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="section-title">Ferrugem</h2>
+                            <p><strong>Descrição:</strong> A ferrugem é uma doença fúngica que afeta principalmente as folhas das plantas. Causa manchas de cor alaranjada ou amarela, que podem levar à queda prematura das folhas.</p>
+                            <p><strong>Estação:</strong> Outono e Inverno</p>
+                        </div>
+                    </div>
 
-            <!-- Barra lateral com notícias -->
-            <div class="col-md-4 sidebar">
-                <h3 class="section-title">Notícias sobre Valorização e Desvalorização</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="section-title">Oídio</h2>
+                            <p><strong>Descrição:</strong> O oídio é uma doença fúngica que causa o aparecimento de manchas brancas, semelhantes a um pó, nas folhas e caules das plantas. Ela afeta principalmente as hortaliças, como tomate e pepino.</p>
+                            <p><strong>Estação:</strong> Primavera e Verão</p>
+                        </div>
+                    </div>
 
-                <div class="news-item">
-                    <h4>Valorizações no Mercado de Grãos</h4>
-                    <p>O preço do milho e da soja estão em alta devido à boa colheita...</p>
-                </div>
-                <div class="news-item">
-                    <h4>Desvalorização da Carne de Boi</h4>
-                    <p>A carne de boi sofreu queda nos preços devido à redução da demanda...</p>
-                </div>
-                <div class="news-item">
-                    <h4>Alta nos Preços da Carne de Porco</h4>
-                    <p>A carne de porco teve uma valorização devido ao aumento das exportações...</p>
-                </div>
-                 <div class="news-item">
-                    <h4>Alta nos Preços da Carne de Porco</h4>
-                    <p>A carne de porco teve uma valorização devido ao aumento das exportações...</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="section-title">Cercospora</h2>
+                            <p><strong>Descrição:</strong> A cercospora é uma doença que afeta principalmente as plantas de feijão e soja. Ela provoca manchas nas folhas que podem se expandir e causar o apodrecimento da planta.</p>
+                            <p><strong>Estação:</strong> Verão e Outono</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="section-title">Antracnose</h2>
+                            <p><strong>Descrição:</strong> A antracnose é uma doença fúngica que afeta diversas plantas, como o feijão e a banana. Ela causa lesões nas folhas, caules e frutos, que podem se necrosar e apodrecer.</p>
+                            <p><strong>Estação:</strong> Primavera e Verão</p>
+                        </div>
+                    </div>
+
+                    <h1>Agrotóxicos</h1>
+                    <p><strong>Benefícios dos Agrotóxicos:</strong> Os agrotóxicos são essenciais para o controle de pragas e doenças nas lavouras. Eles ajudam a aumentar a produtividade das culturas, garantindo alimentos mais seguros e em maior quantidade.</p>
+                    <p><strong>Malefícios dos Agrotóxicos:</strong> O uso excessivo de agrotóxicos pode causar contaminação do solo e da água, além de prejudicar a saúde humana e animal. O uso inadequado pode gerar resistência das pragas e afetar a biodiversidade.</p>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="section-title">Melhores Agrotóxicos</h2>
+                            <ul>
+                                <li>Glifosato - Herbicida eficaz para o controle de ervas daninhas.</li>
+                                <li>Imidacloprido - Inseticida utilizado no controle de pragas em diversas culturas.</li>
+                                <li>Fipronil - Inseticida eficaz no controle de pragas do solo.</li>
+                                <li>Copper Oxychloride - Fungicida para controle de fungos em plantas como tomate e batata.</li>
+                                <li>Azoxistrobina - Fungicida utilizado no controle de doenças fúngicas como o oídio e a ferrugem.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h1>Maquinários para Pulverização</h1>
+                    <p>A seguir, estão listadas algumas das máquinas mais recomendadas para o procedimento de pulverização nas lavouras:</p>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="section-title">Pulverizador Costal</h2>
+                            <p>O pulverizador costal é uma máquina portátil usada para a aplicação de agrotóxicos em pequenas áreas de cultivo. É eficaz para o controle de pragas em hortas e pomares.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="section-title">Pulverizador de Arrasto</h2>
+                            <p>Este tipo de pulverizador é mais adequado para áreas maiores, como lavouras de soja e milho. Ele pode ser arrastado por tratores e permite a aplicação de produtos em uma grande área.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="section-title">Pulverizador de Alta Vazão</h2>
+                            <p>Ideal para grandes propriedades agrícolas, o pulverizador de alta vazão permite a aplicação rápida e eficiente de pesticidas e fertilizantes, com grande alcance e cobertura.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -260,11 +142,13 @@
 
     <!-- Rodapé -->
     <div class="footer">
-        <p>&copy; 2025 Agricultura Brasil. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Agroindústria - Todos os direitos reservados</p>
     </div>
 
-    <!-- Scripts do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <!-- Importando jQuery e Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
